@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # This Program makes you chat with any one who joins this server.
 # Abdisa Dev
+
 echo "
 ████████╗███████╗██████╗ ███╗   ███╗       ██████╗██╗  ██╗ █████╗ ████████╗
 ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║      ██╔════╝██║  ██║██╔══██╗╚══██╔══╝
@@ -9,34 +10,41 @@ echo "
    ██║   ███████╗██║  ██║██║ ╚═╝ ██║      ╚██████╗██║  ██║██║  ██║   ██║   
    ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝       ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝                                                                       
 "
+
+red='\033[1;31m'
+green='\033[1;32m'
+yellow='\033[0;33m'
+blue='\033[7;35m'
+reset='\033[0m'
+
 while true
 do
-    echo "1. Start Chat"
-    echo "0. Exit"
-    echo
+    echo -e "${green}0. Start Chat${reset}"
+    echo -e "${red}1. Exit \n${reset}"
 
-    printf "Enter Your Choice Here: "
+    echo -en "${blue}Enter Your Choice Here:${reset} "
     read Input
     echo
-    if [ "$Input" -eq 1 ]; then
-        printf "Enter Your Name: "
+
+    if [ "$Input" -eq 0 ]; then
+        echo -en "${blue}Enter Your Name:${reset} "
         read Name
         echo
+
     fi
     case "$Input" in
-        1) 
-            echo "Hey $Name Please Be Patient Until We Establish The Connection"
-            echo
+        0) 
+            echo -e "Hey ${yellow}$Name${reset} Please Be Patient Until We Establish The Connection . . .\n"
             # Temporary TCP Socket
             exec nc 0.tcp.eu.ngrok.io -q 5 16648
         ;;
-        0)
-            echo "Bye :("
+        1)
+            echo -e "${yellow}-> Bye :(${reset}"
             echo
             break
         ;;
         *) 
-            echo "Bad Input, Please Try Again!"
+            echo -e "${red}-> Bad Input, Please Try Again!${reset}"
             echo
         ;;
     esac
