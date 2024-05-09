@@ -11,10 +11,13 @@ echo "
    ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝       ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝                                                                       
 "
 
+echo -e "\t\t\t\t\e]8;; https://abdiza.tech \a Abdiza Dev\e]8;;\a\n"
+
 red='\033[1;31m'
 green='\033[1;32m'
 yellow='\033[0;33m'
 blue='\033[7;35m'
+blue_normal='\033[1;35m'
 reset='\033[0m'
 
 while true
