@@ -39,7 +39,7 @@ do
         0) 
             echo -e "Hey ${yellow}$Name${reset} Please Be Patient Until We Establish The Connection . . .\n"
             # Temporary TCP Socket
-            exec nc 0.tcp.eu.ngrok.io -q 5 16648
+            exec nc 0.tcp.in.ngrok.io -q 5 10954
         ;;
         1)
             echo -e "${yellow}-> Bye :(\n${reset}"
