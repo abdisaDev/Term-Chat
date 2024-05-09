@@ -28,8 +28,7 @@ do
             echo "Hey $Name Please Be Patient Until We Establish The Connection"
             echo
             # Temporary TCP Socket
-            exec nc 0.tcp.eu.ngrok.io -w 10 16648
-            echo "test"
+            exec nc 0.tcp.eu.ngrok.io -q 5 16648
         ;;
         0)
             echo "Bye :("
