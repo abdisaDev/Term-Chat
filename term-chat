@@ -39,13 +39,11 @@ do
             exec nc 0.tcp.eu.ngrok.io -q 5 16648
         ;;
         1)
-            echo -e "${yellow}-> Bye :(${reset}"
-            echo
+            echo -e "${yellow}-> Bye :(\n${reset}"
             break
         ;;
         *) 
-            echo -e "${red}-> Bad Input, Please Try Again!${reset}"
-            echo
+            echo -e "${red}-> Bad Input, Please Try Again!\n${reset}"
         ;;
     esac
 done
