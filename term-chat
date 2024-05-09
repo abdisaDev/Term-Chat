@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# This Program makes you chat with any one who joins this server.
+# Abdisa Dev
+echo "
+████████╗███████╗██████╗ ███╗   ███╗       ██████╗██╗  ██╗ █████╗ ████████╗
+╚══██╔══╝██╔════╝██╔══██╗████╗ ████║      ██╔════╝██║  ██║██╔══██╗╚══██╔══╝
+   ██║   █████╗  ██████╔╝██╔████╔██║█████╗██║     ███████║███████║   ██║   
+   ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║╚════╝██║     ██╔══██║██╔══██║   ██║   
+   ██║   ███████╗██║  ██║██║ ╚═╝ ██║      ╚██████╗██║  ██║██║  ██║   ██║   
+   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝       ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝                                                                       
+"
+while true
+do
+    echo "1. Start Chat"
+    echo "0. Exit"
+    echo
+
+    printf "Enter Your Choice Here: "
+    read Input
+    echo
+    if [ "$Input" -eq 1 ]; then
+        printf "Enter Your Name: "
+        read Name
+        echo
+    fi
+    case "$Input" in
+        1) 
+            echo "Hey $Name Please Be Patient Until We Establish The Connection"
+            echo
+            # Temporary TCP Socket
+            exec nc 0.tcp.eu.ngrok.io 16648
+            echo "test"
+        ;;
+        0)
+            echo "Bye :("
+            echo
+            break
+        ;;
+        *) 
+            echo "Bad Input, Please Try Again!"
+            echo
+        ;;
+    esac
+done
